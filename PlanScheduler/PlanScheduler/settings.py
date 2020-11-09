@@ -78,10 +78,22 @@ WSGI_APPLICATION = 'PlanScheduler.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'databases' / 'db.sqlite3',
+    },
+
+    'schools': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'databases' / 'schools.sqlite3',
+    },
+
+    'school': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'databases' / 'school.sqlite3',
     }
 }
+#DATABASE_ROUTERS = ['scheduler.database_routers.DatabaseAppsRouter']
 
+#DATABASE_APPS_MAPPING = {'schools': 'schools'}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -105,9 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
 

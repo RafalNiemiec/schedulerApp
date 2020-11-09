@@ -1,90 +1,261 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-
-from .forms import NameForm
-
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+#from .forms import NameForm, ChangePassword, LoginData, RegisterForm
+#from .models import Group, Teacher, Lesson, Classroom, Time,
+                    #GroupTeacher, GroupLesson, GroupClassroom, GroupTime,
+                    #TeacherLesson, TeacherClassroom, TeacherTime,
+                    #LessonC
+from .forms import *
 
-list = []
+#Main page
 
 def index(request):
-    template = loader.get_template('scheduler/addclass.html')
-    context = {"last word": "w"}
-    return HttpResponse(template.render(context, request))
+
+    return render(request, 'scheduler/mainpage.html')
 
 
-def register(request):
+#Account pages
+
+@login_required
+def myplan(request):
+    print(30*'W')
+    current_user = request.user
+    print(current_user.id)
+    return render(request, 'scheduler/myplans.html')
+
+@login_required
+def createPlan(request):
     if request.method == 'POST':
-        form = NameForm(request.POST)
+        #form = (request.POST)
         if form.is_valid():
-            print('aaaaaaaaaaaaaaaaaa')
-            username = form.cleaned_data['username']
-            pas = form.cleaned_data['pas']
-            list.append(username)
-            user = User.objects.create_user(username, "", pas)
-            user.save()
-            print(30 * '+')
-            print("user created")
-            return render(request, 'scheduler/login.html', {'form': form})
+            pass
+    else:
+        form = ChangePassword()
+    return render(request, 'scheduler/instruction.html')
 
-        # if a GET (or any other method) we'll create a blank form
+@login_required
+def account(request):
+    return render(request, 'scheduler/login.html', {'form': form})
+
+@login_required
+def datasets(request):
+    pass
+
+
+#<<Undone>> start
+
+#Filling data
+
+@login_required
+def namePlan():
+    if request.method == 'POST':
+        form = PlanNameForm(request.POST)
+        if form.is_valid():
+            pass
+            #planName = form.cleaned_data['planName']
+            #Create new database with name: planname
     else:
         form = NameForm()
+    return render(request, 'scheduler/instruction.html')
 
-    return render(request, 'scheduler/login.html', {'form': form})
-    #user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
-    #user.last_name = 'Lennon'
-    #user.save()
+@login_required
+def addTime(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def addClasses():
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def addTeacher():
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def addLesson(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def addClassroom(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+#Connect
+
+@login_required
+def connectClasses():
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def connectTeachers(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def connectLessons(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+@login_required
+def connectClassrooms(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
+
+#Generate plan
+
+@login_required
+def generate(request):
+    if request.method == 'POST':
+        form = LoginData(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = NameForm()
+    return render(request, 'scheduler/instruction.html')
 
 
-def changePassword(request):
-    #u = User.objects.get(username='john')
-    #u.set_password('new password')
-    #u.save()
-    return render(request, "scheduler/changepassword.html")
+#<<Undone>> end
+
+#User settings
 
 @csrf_exempt
-def login(request):
-    print(30*'+')
-    # if this is a POST request we need to process the form data
+def getin(request):
+    print(100*'k')
     if request.method == 'POST':
-        form = NameForm(request.POST)
-        # create a form instance and populate it with data from the request:
-        # form = NameForm(request.POST)
-        # check whether it's valid:
+        form = LoginData(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
-            pas = form.cleaned_data['pas']
-            user = authenticate(username=username, password=pas)
+            pas = form.cleaned_data['password']
+            print(60*'&')
+            print(username)
+            user = authenticate(request, username=username, password=pas)
             if user is not None:
+                login(request, user)
                 print(30*'-')
                 print('log in')
                 myplan(request)
                 return HttpResponseRedirect('myplans')
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-
-            #DZIAAAAAAALAAAAAAA
             return render(request, 'scheduler/login.html', {'form': form})
-
-        # if a GET (or any other method) we'll create a blank form
     else:
         form = NameForm()
-
-
     return render(request, 'scheduler/login.html', {'form': form})
 
+@csrf_exempt
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            rePassword = form.cleaned_data['password']
+            if (str(password)==str(rePassword)):
+                user = User.objects.create_user(username, "", password)
+                user.save()
+                print(30 * '+')
+                print("user created")
+                return render(request, 'scheduler/login.html', {'form': form})
+            else:
+                print("Passwords are not equal")
+    else:
+        form = RegisterForm()
+    return render(request, 'scheduler/register.html', {'form': form})
+
+@login_required
+def changePassword(request):
+    if request.method == 'POST':
+        form = ChangePassword(request.POST)
+        if form.is_valid():
+            currPass = form.cleaned_data['currPass']
+            newPass = form.cleaned_data['newPass']
+            newRePass = form.cleaned_data["newRePass"]
+            if (newPass==newRePass):
+                #user = User.objects.get(username='john')
+                #user.set_password('new password')
+                #user.save()
+                return render(request, 'scheduler/login.html', {'form': form})
+    else:
+        form = ChangePassword()
+    return render(request, "scheduler/changepassword.html", {'form': form})
+
+@login_required
 def logout(request):
     logout(request)
+    return render(request, 'scheduler/mainpage.html')
 
-def user(request, username):
-    username = request.POST['Password']
-    if username=="aaa":
-        return render(request, "scheduler/addclass.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def error(request):
     return render(request, "scheduler/myplans.html")
@@ -95,9 +266,3 @@ def fail(request):
 def success(request):
     return render(request, "scheduler/index.html")
 
-def myplan(request):
-    print(30*'W')
-    return render(request, 'scheduler/myplans.html')
-
-def account(request):
-    return render(request, 'scheduler/login.html', {'form': form})

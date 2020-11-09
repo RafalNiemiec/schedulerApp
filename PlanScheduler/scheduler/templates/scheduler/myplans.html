@@ -1,449 +1,423 @@
 ﻿<!DOCTYPE html>
-
 <html>
   <head>
     {% load static %}
     <title>myPlans</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-      <link href="{% static 'webScheduler/resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
-        <link href="{% static 'webScheduler/data/styles.css' %}" type="text/css" rel="stylesheet"/>
-        <link href="{% static 'webScheduler/files/myplans/styles.css' %}" type="text/css" rel="stylesheet"/>
-        <script src="{% static 'webScheduler/resources/scripts/jquery-3.2.1.min.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/axQuery.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/globals.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axutils.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/annotation.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/axQuery.std.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/doc.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/messagecenter.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/events.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/recording.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/action.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/expr.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/geometry.js' %}"></script>
-        <script src="{% static 'webScheduler/webScheduler/resources/scripts/axure/flyout.js' $}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/model.js' %}"></script>
-        <script src="{% static 'webScheduler/webScheduler/resources/scripts/axure/repeater.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/sto.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/utils.temp.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/variables.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/drag.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/move.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/visibility.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/style.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/adaptive.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/tree.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/init.temp.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/legacy.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/viewer.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/math.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/jquery.nicescroll.min.js' %}"></script>
-        <script src="{% static 'webScheduler/data/document.js' %}"></script>
-        <script src="{% static 'webScheduler/files/myplans/data.js' %}"></script>
-        <script type="{% static 'text/javascript' %}">
-                $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-                $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-                $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
-        </script>
+    {% include "scheduler/imports.html" %}
+    {% load static %}
+    <link href="{% static 'webScheduler/files/myplans/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <script src="{% static 'webScheduler/files/myplans/data.js' %}"></script>
+
   </head>
   <body>
     <div id="base" class="">
 
       <!-- Unnamed (Group) -->
-      <div id="u2324" class="ax_default" data-left="736" data-top="406" data-width="718" data-height="373">
+      <div id="u2495" class="ax_default" data-left="736" data-top="406" data-width="718" data-height="373">
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u2325" class="ax_default box_1">
-          <div id="u2325_div" class=""></div>
-          <div id="u2325_text" class="text " style="display:none; visibility: hidden">
+        <div id="u2496" class="ax_default box_1">
+          <div id="u2496_div" class=""></div>
+          <div id="u2496_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
         </div>
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u2326" class="ax_default box_3">
-          <div id="u2326_div" class=""></div>
-          <div id="u2326_text" class="text ">
+        <div id="u2497" class="ax_default box_3">
+          <div id="u2497_div" class=""></div>
+          <div id="u2497_text" class="text ">
             <p><span>Add new plan</span></p>
           </div>
         </div>
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u2327" class="ax_default heading_1">
-          <div id="u2327_div" class=""></div>
-          <div id="u2327_text" class="text ">
+        <div id="u2498" class="ax_default heading_1">
+          <div id="u2498_div" class=""></div>
+          <div id="u2498_text" class="text ">
             <p><span>You don't have any plans yet.</span></p>
           </div>
         </div>
       </div>
 
-      <!-- Unnamed (footer 1920) -->
+      <!-- Unnamed (footer) -->
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2329" class="ax_default box_3">
-        <div id="u2329_div" class=""></div>
-        <div id="u2329_text" class="text " style="display:none; visibility: hidden">
+      <!-- FooterBar (Group) -->
+      <div id="u2500" class="ax_default" data-label="FooterBar" data-left="0" data-top="1087" data-width="1919" data-height="324">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2501" class="ax_default box_3">
+          <div id="u2501_div" class=""></div>
+          <div id="u2501_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2502" class="ax_default heading_1">
+          <div id="u2502_div" class=""></div>
+          <div id="u2502_text" class="text ">
+            <p><span style="text-decoration:underline ;">Schedule plan without problem</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2503" class="ax_default heading_2">
+          <div id="u2503_div" class=""></div>
+          <div id="u2503_text" class="text ">
+            <p><span>Facebook</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Group) -->
+        <div id="u2504" class="ax_default" data-left="894" data-top="1128" data-width="143" data-height="206">
+
+          <!-- Unnamed (Group) -->
+          <div id="u2505" class="ax_default" data-left="894" data-top="1190" data-width="132" data-height="144">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u2506" class="ax_default heading_2">
+              <div id="u2506_div" class=""></div>
+              <div id="u2506_text" class="text ">
+                <p><span>Email</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u2507" class="ax_default heading_2">
+              <div id="u2507_div" class=""></div>
+              <div id="u2507_text" class="text ">
+                <p><span>Phone</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u2508" class="ax_default heading_2">
+              <div id="u2508_div" class=""></div>
+              <div id="u2508_text" class="text ">
+                <p><span>Address</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u2509" class="ax_default heading_2">
+            <div id="u2509_div" class=""></div>
+            <div id="u2509_text" class="text ">
+              <p><span>Information</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2510" class="ax_default heading_2">
+          <div id="u2510_div" class=""></div>
+          <div id="u2510_text" class="text ">
+            <p><span>Google</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2511" class="ax_default heading_2">
+          <div id="u2511_div" class=""></div>
+          <div id="u2511_text" class="text ">
+            <p><span>About Us</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2512" class="ax_default heading_2">
+          <div id="u2512_div" class=""></div>
+          <div id="u2512_text" class="text ">
+            <p><span>Contact Us</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2513" class="ax_default shape">
+          <div id="u2513_div" class=""></div>
+          <div id="u2513_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u2514" class="ax_default heading_1">
+          <div id="u2514_div" class=""></div>
+          <div id="u2514_text" class="text ">
+            <p><span style="text-decoration:underline ;">Rafał Niemiec 2020</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Vertical Line) -->
+        <div id="u2515" class="ax_default line">
+          <img id="u2515_img" class="img " src="images/mainpage/u20.svg"/>
+          <div id="u2515_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Vertical Line) -->
+        <div id="u2516" class="ax_default line">
+          <img id="u2516_img" class="img " src="images/mainpage/u20.svg"/>
+          <div id="u2516_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u2517" class="ax_default image">
+        <img id="u2517_img" class="img " src="images/mainpage/u22.png"/>
+        <div id="u2517_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
       </div>
-
-      <!-- Unnamed (Vertical Line) -->
-      <div id="u2330" class="ax_default line">
-        <img id="u2330_img" class="img " src="images/mainpage/u18.svg"/>
-        <div id="u2330_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Vertical Line) -->
-      <div id="u2331" class="ax_default line">
-        <img id="u2331_img" class="img " src="images/mainpage/u18.svg"/>
-        <div id="u2331_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2332" class="ax_default heading_1">
-        <div id="u2332_div" class=""></div>
-        <div id="u2332_text" class="text ">
-          <p><span style="text-decoration:underline ;">Schedule plan without problem</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2333" class="ax_default heading_2">
-        <div id="u2333_div" class=""></div>
-        <div id="u2333_text" class="text ">
-          <p><span>Facebook</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2334" class="ax_default heading_2">
-        <div id="u2334_div" class=""></div>
-        <div id="u2334_text" class="text ">
-          <p><span>Email</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2335" class="ax_default heading_2">
-        <div id="u2335_div" class=""></div>
-        <div id="u2335_text" class="text ">
-          <p><span>Phone</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2336" class="ax_default heading_2">
-        <div id="u2336_div" class=""></div>
-        <div id="u2336_text" class="text ">
-          <p><span>Address</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2337" class="ax_default heading_2">
-        <div id="u2337_div" class=""></div>
-        <div id="u2337_text" class="text ">
-          <p><span>Google</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2338" class="ax_default heading_2">
-        <div id="u2338_div" class=""></div>
-        <div id="u2338_text" class="text ">
-          <p><span>About Us</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2339" class="ax_default heading_2">
-        <div id="u2339_div" class=""></div>
-        <div id="u2339_text" class="text ">
-          <p><span>Contact Us</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2340" class="ax_default heading_2">
-        <div id="u2340_div" class=""></div>
-        <div id="u2340_text" class="text ">
-          <p><span>Information</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2341" class="ax_default shape">
-        <div id="u2341_div" class=""></div>
-        <div id="u2341_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2342" class="ax_default heading_1">
-        <div id="u2342_div" class=""></div>
-        <div id="u2342_text" class="text ">
-          <p><span style="text-decoration:underline ;">Rafał Niemiec 2020</span></p>
-        </div>
-      </div>
-      <div id="u2328" style="display:none; visibility:hidden;"></div>
+      <div id="u2499" style="display:none; visibility:hidden;"></div>
 
       <!-- Unnamed (accountField) -->
 
-      <!-- Unnamed (menuBar 1920) -->
+      <!-- AllAccount (Group) -->
+      <div id="u2519" class="ax_default" data-label="AllAccount" data-left="0" data-top="0" data-width="1920" data-height="941">
 
-      <!-- Unnamed (Group) -->
-      <div id="u2345" class="ax_default" data-left="0" data-top="0" data-width="1920" data-height="80">
+        <!-- Unnamed (menuBar) -->
+
+        <!-- MenuBar (Group) -->
+        <div id="u2521" class="ax_default" data-label="MenuBar" data-left="0" data-top="0" data-width="1920" data-height="84.6329296397423">
+
+          <!-- MenuBar (Group) -->
+          <div id="u2522" class="ax_default" data-label="MenuBar" data-left="0" data-top="0" data-width="1920" data-height="84.6329296397423">
+
+            <!-- MenuBarBg (Rectangle) -->
+            <div id="u2523" class="ax_default box_3" data-label="MenuBarBg">
+              <div id="u2523_div" class=""></div>
+              <div id="u2523_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+
+            <!-- LogoImg (Image) -->
+            <div id="u2524" class="ax_default image" data-label="LogoImg">
+              <img id="u2524_img" class="img " src="images/mainpage/u22.png"/>
+              <div id="u2524_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+
+            <!-- LoginButton (Shape) -->
+            <div id="u2525" class="ax_default icon" data-label="LoginButton">
+              <img id="u2525_img" class="img " src="images/mainpage/loginbutton_u30.svg"/>
+              <div id="u2525_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+
+            <!-- MenuLine (Line) -->
+            <div id="u2526" class="ax_default line" data-label="MenuLine">
+              <img id="u2526_img" class="img " src="images/mainpage/menuline_u31.svg"/>
+              <div id="u2526_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u2520" style="display:none; visibility:hidden;"></div>
+
+        <!-- Unnamed (accountBar 1920) -->
 
         <!-- Unnamed (Group) -->
-        <div id="u2346" class="ax_default" data-left="0" data-top="0" data-width="1920" data-height="80">
+        <div id="u2528" class="ax_default" data-left="0" data-top="144" data-width="1563" data-height="92">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u2529" class="ax_default box_3">
+            <div id="u2529_div" class=""></div>
+            <div id="u2529_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Group) -->
+        <div id="u2530" class="ax_default" data-left="76" data-top="309" data-width="237" data-height="320">
 
           <!-- Unnamed (Group) -->
-          <div id="u2347" class="ax_default" data-left="0" data-top="0" data-width="1920" data-height="80">
+          <div id="u2531" class="ax_default" data-left="76" data-top="309" data-width="237" data-height="80">
 
             <!-- Unnamed (Rectangle) -->
-            <div id="u2348" class="ax_default box_3">
-              <div id="u2348_div" class=""></div>
-              <div id="u2348_text" class="text " style="display:none; visibility: hidden">
+            <div id="u2532" class="ax_default heading_1">
+              <div id="u2532_div" class=""></div>
+              <div id="u2532_text" class="text ">
+                <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; My plans</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Shape) -->
+            <div id="u2533" class="ax_default icon">
+              <img id="u2533_img" class="img " src="images/myplans/u2533.svg"/>
+              <div id="u2533_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
             </div>
           </div>
 
           <!-- Unnamed (Group) -->
-          <div id="u2349" class="ax_default" data-left="1426" data-top="24" data-width="261" data-height="46">
+          <div id="u2534" class="ax_default" data-left="76" data-top="389" data-width="237" data-height="80">
 
             <!-- Unnamed (Rectangle) -->
-            <div id="u2350" class="ax_default label">
-              <div id="u2350_div" class=""></div>
-              <div id="u2350_text" class="text ">
-                <p><span style="text-decoration:underline ;">Futures</span></p>
+            <div id="u2535" class="ax_default heading_1">
+              <div id="u2535_div" class=""></div>
+              <div id="u2535_text" class="text ">
+                <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; My account</span></p>
               </div>
             </div>
 
+            <!-- Unnamed (Shape) -->
+            <div id="u2536" class="ax_default icon">
+              <img id="u2536_img" class="img " src="images/myplans/u2536.svg"/>
+              <div id="u2536_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unnamed (Group) -->
+          <div id="u2537" class="ax_default" data-left="76" data-top="469" data-width="237" data-height="80">
+
             <!-- Unnamed (Rectangle) -->
-            <div id="u2351" class="ax_default label">
-              <div id="u2351_div" class=""></div>
-              <div id="u2351_text" class="text ">
-                <p><span style="text-decoration:underline ;">Support</span></p>
+            <div id="u2538" class="ax_default heading_1">
+              <div id="u2538_div" class=""></div>
+              <div id="u2538_text" class="text ">
+                <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Change password</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Shape) -->
+            <div id="u2539" class="ax_default icon">
+              <img id="u2539_img" class="img " src="images/myplans/u2539.svg"/>
+              <div id="u2539_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unnamed (Group) -->
+          <div id="u2540" class="ax_default" data-left="76" data-top="549" data-width="237" data-height="80">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u2541" class="ax_default heading_1">
+              <div id="u2541_div" class=""></div>
+              <div id="u2541_text" class="text ">
+                <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Data sets</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Shape) -->
+            <div id="u2542" class="ax_default icon">
+              <img id="u2542_img" class="img " src="images/myplans/u2542.svg"/>
+              <div id="u2542_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
               </div>
             </div>
           </div>
         </div>
+        <div id="u2527" style="display:none; visibility:hidden;"></div>
 
-        <!-- Unnamed (Image) -->
-        <div id="u2352" class="ax_default image">
-          <img id="u2352_img" class="img " src="images/mainpage/u13.svg"/>
-          <div id="u2352_text" class="text " style="display:none; visibility: hidden">
-            <p></p>
+        <!-- Unnamed (optionsBar) -->
+
+        <!-- Unnamed (Group) -->
+        <div id="u2544" class="ax_default" data-left="108" data-top="715" data-width="212" data-height="60">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u2545" class="ax_default heading_1">
+            <div id="u2545_div" class=""></div>
+            <div id="u2545_text" class="text ">
+              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Options</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Shape) -->
+          <div id="u2546" class="ax_default icon">
+            <img id="u2546_img" class="img " src="images/myplans/u2546.svg"/>
+            <div id="u2546_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
           </div>
         </div>
 
-        <!-- LoginButton (Shape) -->
-        <div id="u2353" class="ax_default icon" data-label="LoginButton">
-          <img id="u2353_img" class="img " src="images/mainpage/loginbutton_u14.svg"/>
-          <div id="u2353_text" class="text " style="display:none; visibility: hidden">
+        <!-- LogOutForms (Group) -->
+        <div id="u2547" class="ax_default" data-label="LogOutForms" data-left="108" data-top="835" data-width="212" data-height="60">
+
+          <!-- Unnamed (Rectangle) -->
+          <div onclick="location.href='{% url 'logout' %}'" id="u2548" class="ax_default heading_1">
+            <div id="u2548_div" class=""></div>
+            <div id="u2548_text" class="text ">
+              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Log Out</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Shape) -->
+          <div id="u2549" class="ax_default icon">
+            <img id="u2549_img" class="img " src="images/myplans/u2549.svg"/>
+            <div id="u2549_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Group) -->
+        <div id="u2550" class="ax_default" data-left="108" data-top="775" data-width="212" data-height="60">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u2551" class="ax_default heading_1">
+            <div id="u2551_div" class=""></div>
+            <div id="u2551_text" class="text ">
+              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Help</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Shape) -->
+          <div id="u2552" class="ax_default icon">
+            <img id="u2552_img" class="img " src="images/myplans/u2552.svg"/>
+            <div id="u2552_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div id="u2543" style="display:none; visibility:hidden;"></div>
+
+        <!-- Unnamed (Shape) -->
+        <div id="u2553" class="ax_default line">
+          <img id="u2553_img" class="img " src="images/myplans/u2553.svg"/>
+          <div id="u2553_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
         </div>
-      </div>
-
-      <!-- Unnamed (Line) -->
-      <div id="u2354" class="ax_default line">
-        <img id="u2354_img" class="img " src="images/mainpage/u15.svg"/>
-        <div id="u2354_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-      <div id="u2344" style="display:none; visibility:hidden;"></div>
-
-      <!-- Unnamed (accountBar 1920) -->
-
-      <!-- Unnamed (Group) -->
-      <div id="u2356" class="ax_default" data-left="0" data-top="114" data-width="1563" data-height="92">
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u2357" class="ax_default box_3">
-          <div id="u2357_div" class=""></div>
-          <div id="u2357_text" class="text " style="display:none; visibility: hidden">
+        <div id="u2554" class="ax_default shape">
+          <div id="u2554_div" class=""></div>
+          <div id="u2554_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
         </div>
       </div>
+      <div id="u2518" style="display:none; visibility:hidden;"></div>
 
-      <!-- Unnamed (Group) -->
-      <div id="u2358" class="ax_default" data-left="76" data-top="279" data-width="237" data-height="320">
+      <!-- MyplansHeader (Group) -->
+      <div id="u2555" class="ax_default" data-label="MyplansHeader" data-left="566" data-top="158" data-width="512" data-height="68">
 
-        <!-- Unnamed (Group) -->
-        <div id="u2359" class="ax_default" data-left="76" data-top="279" data-width="237" data-height="80">
-
-          <!-- Unnamed (Rectangle) -->
-          <div id="u2360" class="ax_default heading_1">
-            <div id="u2360_div" class=""></div>
-            <div id="u2360_text" class="text ">
-              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; My plans</span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (Shape) -->
-          <div id="u2361" class="ax_default icon">
-            <img id="u2361_img" class="img " src="images/myplans/u2361.svg"/>
-            <div id="u2361_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unnamed (Group) -->
-        <div id="u2362" class="ax_default" data-left="76" data-top="359" data-width="237" data-height="80">
-
-          <!-- Unnamed (Rectangle) -->
-          <div id="u2363" class="ax_default heading_1">
-            <div id="u2363_div" class=""></div>
-            <div id="u2363_text" class="text ">
-              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; My account</span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (Shape) -->
-          <div id="u2364" class="ax_default icon">
-            <img id="u2364_img" class="img " src="images/myplans/u2364.svg"/>
-            <div id="u2364_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unnamed (Group) -->
-        <div id="u2365" class="ax_default" data-left="76" data-top="439" data-width="237" data-height="80">
-
-          <!-- Unnamed (Rectangle) -->
-          <div id="u2366" class="ax_default heading_1">
-            <div id="u2366_div" class=""></div>
-            <div id="u2366_text" class="text ">
-              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Change password</span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (Shape) -->
-          <div id="u2367" class="ax_default icon">
-            <img id="u2367_img" class="img " src="images/myplans/u2367.svg"/>
-            <div id="u2367_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unnamed (Group) -->
-        <div id="u2368" class="ax_default" data-left="76" data-top="519" data-width="237" data-height="80">
-
-          <!-- Unnamed (Rectangle) -->
-          <div id="u2369" class="ax_default heading_1">
-            <div id="u2369_div" class=""></div>
-            <div id="u2369_text" class="text ">
-              <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Data sets</span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (Shape) -->
-          <div id="u2370" class="ax_default icon">
-            <img id="u2370_img" class="img " src="images/myplans/u2370.svg"/>
-            <div id="u2370_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="u2355" style="display:none; visibility:hidden;"></div>
-
-      <!-- Unnamed (optionsBar) -->
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2372" class="ax_default heading_1">
-        <div id="u2372_div" class=""></div>
-        <div id="u2372_text" class="text ">
-          <p><span>Options</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2373" class="ax_default heading_1">
-        <div id="u2373_div" class=""></div>
-        <div id="u2373_text" class="text ">
-          <p><span>Help</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2374" class="ax_default heading_1">
-        <div id="u2374_div" class=""></div>
-        <div id="u2374_text" class="text ">
-          <p><span>Log Out</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u2375" class="ax_default icon">
-        <img id="u2375_img" class="img " src="images/myplans/u2375.svg"/>
-        <div id="u2375_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u2376" class="ax_default icon">
-        <img id="u2376_img" class="img " src="images/myplans/u2376.svg"/>
-        <div id="u2376_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u2377" class="ax_default icon">
-        <img id="u2377_img" class="img " src="images/myplans/u2377.svg"/>
-        <div id="u2377_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-      <div id="u2371" style="display:none; visibility:hidden;"></div>
-
-      <!-- Unnamed (Line) -->
-      <div id="u2378" class="ax_default line">
-        <img id="u2378_img" class="img " src="images/myplans/u2378.svg"/>
-        <div id="u2378_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2379" class="ax_default shape">
-        <div id="u2379_div" class=""></div>
-        <div id="u2379_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-      <div id="u2343" style="display:none; visibility:hidden;"></div>
-
-      <!-- Unnamed (Group) -->
-      <div id="u2380" class="ax_default" data-left="373" data-top="124" data-width="512" data-height="68">
-
-        <!-- Unnamed (Rectangle) -->
-        <div id="u2381" class="ax_default heading_1">
-          <div id="u2381_div" class=""></div>
-          <div id="u2381_text" class="text ">
+        <!-- MyplanText (Rectangle) -->
+        <div id="u2556" class="ax_default heading_1" data-label="MyplanText">
+          <div id="u2556_div" class=""></div>
+          <div id="u2556_text" class="text ">
             <p><span>My plans</span></p>
           </div>
         </div>
 
-        <!-- Unnamed (Shape) -->
-        <div id="u2382" class="ax_default icon">
-          <img id="u2382_img" class="img " src="images/myplans/u2382.svg"/>
-          <div id="u2382_text" class="text " style="display:none; visibility: hidden">
+        <!-- MyplansIcon (Shape) -->
+        <div id="u2557" class="ax_default icon" data-label="MyplansIcon">
+          <img id="u2557_img" class="img " src="images/myplans/myplansicon_u2557.svg"/>
+          <div id="u2557_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
         </div>
@@ -452,29 +426,29 @@
       <!-- Unnamed (newPlanIcon) -->
 
       <!-- AddPlanButton (Rectangle) -->
-      <div id="u2384" class="ax_default shape" data-label="AddPlanButton">
-        <div id="u2384_div" class=""></div>
-        <div id="u2384_text" class="text " style="display:none; visibility: hidden">
+      <div id="u2559" class="ax_default shape" data-label="AddPlanButton">
+        <div id="u2559_div" class=""></div>
+        <div id="u2559_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
       </div>
 
       <!-- Unnamed (Plus) -->
-      <div id="u2385" class="ax_default shape">
-        <img id="u2385_img" class="img " src="images/myplans/u2385.svg"/>
-        <div id="u2385_text" class="text " style="display:none; visibility: hidden">
+      <div id="u2560" class="ax_default shape">
+        <img id="u2560_img" class="img " src="images/myplans/u2560.svg"/>
+        <div id="u2560_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u2386" class="ax_default paragraph">
-        <div id="u2386_div" class=""></div>
-        <div id="u2386_text" class="text ">
+      <div id="u2561" class="ax_default paragraph">
+        <div id="u2561_div" class=""></div>
+        <div id="u2561_text" class="text ">
           <p><span>Add new plan</span></p>
         </div>
       </div>
-      <div id="u2383" style="display:none; visibility:hidden;"></div>
+      <div id="u2558" style="display:none; visibility:hidden;"></div>
     </div>
     <script src="resources/scripts/axure/ios.js"></script>
   </body>
