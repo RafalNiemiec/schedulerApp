@@ -80,12 +80,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'databases' / 'db.sqlite3',
     },
-
-    'schools': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'databases' / 'schools.sqlite3',
-    },
-
     'school': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'databases' / 'school.sqlite3',

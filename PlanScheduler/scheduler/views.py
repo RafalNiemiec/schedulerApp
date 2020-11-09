@@ -6,15 +6,20 @@ from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 #from .forms import NameForm, ChangePassword, LoginData, RegisterForm
-#from .models import Group, Teacher, Lesson, Classroom, Time,
+from scheduler.models import Group, Teacher, Lesson, Classroom, Time
                     #GroupTeacher, GroupLesson, GroupClassroom, GroupTime,
                     #TeacherLesson, TeacherClassroom, TeacherTime,
                     #LessonC
-from .forms import *
+#from .forms import *
+
 
 #Main page
 
 def index(request):
+    p = Teacher.objects.using('testdb').create(teacherId=1, name='Jan', surname='Kowalski')
+    #Teacher.objects.create(teacherId=1, name='Jan', surname='Kowalski').using('testdb')
+    #p = Group(groupId=1, groupName="1A")
+    p.save(using='testdb')
 
     return render(request, 'scheduler/mainpage.html')
 
@@ -57,38 +62,57 @@ def namePlan():
         form = PlanNameForm(request.POST)
         if form.is_valid():
             pass
-            #planName = form.cleaned_data['planName']
+            planName = form.cleaned_data['planName']
             #Create new database with name: planname
+            return HttpResponseRedirect('myplans')
     else:
-        form = NameForm()
+        form = PlanNameForm()
     return render(request, 'scheduler/instruction.html')
 
 @login_required
-def addTime(request):
+def addTime(request, planName):
     if request.method == 'POST':
-        form = LoginData(request.POST)
+        form = AddTimeForm(request.POST)
         if form.is_valid():
             pass
+            #po naciśnięciu przycisku
+            #p = Time.objects.using(planName).create(timeWindow=selectedTime)
+            #p.save(using=planName)
     else:
-        form = NameForm()
-    return render(request, 'scheduler/instruction.html')
+        form = AddTimeForm()
+    return render(request, 'scheduler/addtime.html')
 
 @login_required
 def addClasses():
     if request.method == 'POST':
-        form = LoginData(request.POST)
+        form = AddClassesForm(request.POST)
         if form.is_valid():
             pass
+            """
+            po naciśnięciu przycisku
+            
+            groupName = form.cleaned_data['groupName']
+            p = Group.objects.using(planName).create(groupName=groupName)
+            p.save(using=planName)
+            """
     else:
         form = NameForm()
     return render(request, 'scheduler/instruction.html')
 
 @login_required
-def addTeacher():
+def addTeacher(request):
     if request.method == 'POST':
         form = LoginData(request.POST)
         if form.is_valid():
             pass
+            """
+            po naciśnięciu przycisku
+            
+            name = form.cleaned_data['name']
+            surname = form.cleaned_data['surname']
+            p = Group.objects.using(planName).create(name=name, surname=surname)
+            p.save(using=planName)
+            """
     else:
         form = NameForm()
     return render(request, 'scheduler/instruction.html')
@@ -96,9 +120,16 @@ def addTeacher():
 @login_required
 def addLesson(request):
     if request.method == 'POST':
-        form = LoginData(request.POST)
+        form = AddLessonForm(request.POST)
         if form.is_valid():
             pass
+            """
+            po naciśnięciu przycisku
+
+            lessonName = form.cleaned_data['lessonName']
+            p = Group.objects.using(planName).create(lessonName = lessonName)
+            p.save(using=planName)
+            """
     else:
         form = NameForm()
     return render(request, 'scheduler/instruction.html')
@@ -109,6 +140,14 @@ def addClassroom(request):
         form = LoginData(request.POST)
         if form.is_valid():
             pass
+            """
+            po naciśnięciu przycisku
+
+            classroomName = form.cleaned_data['classroomName']
+            building = form.cleaned_data['building']
+            p = Group.objects.using(planName).create(classroomName=classroomName, building=building)
+            p.save(using=planName)
+            """
     else:
         form = NameForm()
     return render(request, 'scheduler/instruction.html')
