@@ -7,8 +7,7 @@ class NameForm(forms.Form):
 #User forms
 class LoginData(forms.Form):
     username = forms.CharField(max_length=30)
-    password = forms.CharField(max_length=30, min_length=8,
-                               help_text='Min 8 characters')
+    password = forms.CharField(max_length=30)
 
 class RegisterForm(forms.Form):
     username = forms.CharField(max_length=30)
@@ -50,3 +49,7 @@ class AddLessonForm(forms.Form):
 class AddClassroomForm(forms.Form):
     classroomName = forms.CharField(initial='Classroom name', max_length=15, help_text='max 60 characters',
                                  error_messages={'required': 'Please insert data'})
+
+#class
+#Countries = forms.MultipleChoiceField(widget=forms.SelectMultiple,
+                                            #choices=OPTIONS_TUPPLE)

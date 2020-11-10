@@ -83,7 +83,11 @@ DATABASES = {
     'school': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'databases' / 'school.sqlite3',
-    }
+    },
+    'planPermission': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'databases' / 'planPermission.sqlite3',
+    },
 }
 #DATABASE_ROUTERS = ['scheduler.database_routers.DatabaseAppsRouter']
 

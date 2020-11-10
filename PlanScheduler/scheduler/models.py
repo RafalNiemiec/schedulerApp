@@ -2,52 +2,61 @@ from django.db import models
 
 # Create your models here.
 
-#class Category(models.Model):
-#    name = models.CharField(max_length=128, unique=True)
-
-  #  def __unicode__(self):
-  #      return self.name
 """
-class Page(models.Model):
-    category = models.ForeignKey(Category)
-    title = models.CharField(max_length=128)
-    url = models.URLField()
-    views = models.IntegerField(default=0)
-
-    def __unicode__(self):
-        return self.title
-
-"""
-
-
-#School tables
-class Group(models.Model):
-    groupName = models.CharField(max_length=30)
-    class Meta:
-        db_table = 'group'
-
-class Teacher(models.Model):
-    name = models.CharField(max_length=30)
-    surname = models.CharField(max_length=30)
-    class Meta:
-        db_table = 'teacher'
-
-class Lesson(models.Model):
-    lessonName = models.CharField(max_length=30)
-    class Meta:
-        db_table = 'lesson'
-
-class Classroom(models.Model):
-    classroomName = models.CharField(max_length=30)
-    building = models.CharField(max_length=30)
-    class Meta:
-        db_table = 'classroom'
 
 class Time(models.Model):
     timeWindow = models.IntegerField()
     class Meta:
         db_table = 'time'
 
+class Classroom(models.Model):
+    classroomName = models.CharField(max_length=30)
+    building = models.CharField(max_length=30)
+    #Relations
+    time = models.ManyToManyField(Time)
+    class Meta:
+        db_table = 'classroom'
+
+class Lesson(models.Model):
+    lessonName = models.CharField(max_length=30)
+    # Relations
+    classrooms = models.ManyToManyField(Classroom)
+    time = models.ManyToManyField(Time)
+    class Meta:
+        db_table = 'lesson'
+
+class Teacher(models.Model):
+    name = models.CharField(max_length=30)
+    surname = models.CharField(max_length=30)
+    #Relations
+    lesson = models.ManyToManyField(Lesson)
+    classroom = models.ManyToManyField(Classroom)
+    time = models.ManyToManyField(Time)
+    class Meta:
+        db_table = 'teacher'
+
+#School tables
+class Group(models.Model):
+    groupName = models.CharField(max_length=30)
+    #Relations
+    teacher = models.ManyToManyField(Teacher)
+    lesson = models.ManyToManyField(Lesson)
+    classroom = models.ManyToManyField(Classroom)
+    time = models.ManyToManyField(Time)
+    class Meta:
+        db_table = 'group'
+
+"""
+
+
+class PlansPermission(models.Model):
+    userNumber = models.CharField(max_length=60)
+    planName = models.CharField(max_length=60)
+    class Meta:
+        db_table = 'plansPermission'
+
+
+"""
 #Connects
 
 #Groups
@@ -113,3 +122,5 @@ class ClassroomTime(models.Model):
     timeId = models.IntegerField()
     class Meta:
         db_table = 'classroomTime'
+        
+"""

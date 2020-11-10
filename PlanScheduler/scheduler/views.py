@@ -5,26 +5,23 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-#from .forms import NameForm, ChangePassword, LoginData, RegisterForm
-from scheduler.models import Group, Teacher, Lesson, Classroom, Time
+from .forms import NameForm, ChangePassword, LoginData, RegisterForm
+#from scheduler.models import Group, Teacher, Lesson, Classroom, Time
                     #GroupTeacher, GroupLesson, GroupClassroom, GroupTime,
                     #TeacherLesson, TeacherClassroom, TeacherTime,
                     #LessonC
-#from .forms import *
-
+from .forms import *
+from .models import *
 
 #Main page
 
 def index(request):
-    p = Teacher.objects.using('testdb').create(teacherId=1, name='Jan', surname='Kowalski')
-    #Teacher.objects.create(teacherId=1, name='Jan', surname='Kowalski').using('testdb')
-    #p = Group(groupId=1, groupName="1A")
-    p.save(using='testdb')
-
+    actualUser = request.user
+    print(actualUser)
+    #logout(request)
     return render(request, 'scheduler/mainpage.html')
 
-
-#Account pages
+#Account pages---------------------------------
 
 @login_required
 def myplan(request):
@@ -36,11 +33,14 @@ def myplan(request):
 @login_required
 def createPlan(request):
     if request.method == 'POST':
-        #form = (request.POST)
+        #form = PlanNameForm(request.POST)
         if form.is_valid():
             pass
+            # p = Time.objects.using(planName).create(timeWindow=selectedTime)
+            # p.save(using=planName)
+
     else:
-        form = ChangePassword()
+        form = PlanNameForm()
     return render(request, 'scheduler/instruction.html')
 
 @login_required
@@ -54,17 +54,20 @@ def datasets(request):
 
 #<<Undone>> start
 
-#Filling data
+#Filling data------------------------------------------
 
 @login_required
-def namePlan():
+def namePlan(request):
     if request.method == 'POST':
         form = PlanNameForm(request.POST)
         if form.is_valid():
-            pass
+            actualUser = request.user
             planName = form.cleaned_data['planName']
+            assign = PlansPermission.objects.using(planName).create(userNumber=actualUse, planName=planName)
+            assign.save(using=planName)
+
             #Create new database with name: planname
-            return HttpResponseRedirect('myplans')
+            return HttpResponseRedirect('addTime')
     else:
         form = PlanNameForm()
     return render(request, 'scheduler/instruction.html')
@@ -96,13 +99,13 @@ def addClasses():
             p.save(using=planName)
             """
     else:
-        form = NameForm()
+        form = AddClassesForm()
     return render(request, 'scheduler/instruction.html')
 
 @login_required
 def addTeacher(request):
     if request.method == 'POST':
-        form = LoginData(request.POST)
+        form = AddTeacherForm(request.POST)
         if form.is_valid():
             pass
             """
@@ -114,7 +117,7 @@ def addTeacher(request):
             p.save(using=planName)
             """
     else:
-        form = NameForm()
+        form = AddTeacherForm()
     return render(request, 'scheduler/instruction.html')
 
 @login_required
@@ -131,13 +134,13 @@ def addLesson(request):
             p.save(using=planName)
             """
     else:
-        form = NameForm()
+        form = AddLessonForm()
     return render(request, 'scheduler/instruction.html')
 
 @login_required
 def addClassroom(request):
     if request.method == 'POST':
-        form = LoginData(request.POST)
+        form = AddClassroomForm(request.POST)
         if form.is_valid():
             pass
             """
@@ -149,11 +152,10 @@ def addClassroom(request):
             p.save(using=planName)
             """
     else:
-        form = NameForm()
+        form = AddClassroomForm()
     return render(request, 'scheduler/instruction.html')
 
-#Connect
-
+#Connect---------------------------------------
 @login_required
 def connectClasses():
     if request.method == 'POST':
@@ -194,7 +196,7 @@ def connectClassrooms(request):
         form = NameForm()
     return render(request, 'scheduler/instruction.html')
 
-#Generate plan
+#Generate plan --------------------------
 
 @login_required
 def generate(request):
@@ -209,7 +211,7 @@ def generate(request):
 
 #<<Undone>> end
 
-#User settings
+#User settings--------------------
 
 @csrf_exempt
 def getin(request):
@@ -274,34 +276,4 @@ def changePassword(request):
 def logout(request):
     logout(request)
     return render(request, 'scheduler/mainpage.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def error(request):
-    return render(request, "scheduler/myplans.html")
-
-def fail(request):
-    return render(request, "scheduler/index.html")
-
-def success(request):
-    return render(request, "scheduler/index.html")
 
