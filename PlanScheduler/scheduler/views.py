@@ -149,7 +149,7 @@ def addTeacher(request, planId):
             data.save(using="schoolsDB")
     else:
         form = AddTeacherForm()
-    return render(request, 'scheduler/addteacher.html')
+    return render(request, 'scheduler/addteacher.html', {'planId': planId})
 
 
 @login_required
@@ -178,7 +178,7 @@ def addClassroom(request, planId):
             data.save(using='schoolsDB')
     else:
         form = AddClassroomForm()
-    return render(request, 'scheduler/addclassroom.html')
+    return render(request, 'scheduler/addclassroom.html', {'planId':planId})
 
 
 # Connect---------------------------------------
@@ -212,7 +212,7 @@ def connectClasses(request, planId, inter):
         if inter<len(groups):
             return redirect(connectClasses, planId=planId, inter=inter)
     return render(request, 'scheduler/connectclasses.html',
-                      {'teachers':teachers, 'lessons':lessons,'classrooms':classrooms, 'times':times, 'groups':groups})
+                      {'teachers':teachers, 'lessons':lessons,'classrooms':classrooms, 'times':times, 'groups':groups, 'planId':planId})
 
 
 #@login_required
@@ -242,7 +242,7 @@ def connectTeachers(request, planId, inter):
         if inter<len(teachers):
             return redirect(connectTeachers, planId=1, inter=inter)
     return render(request, 'scheduler/connectteachers.html',
-                  {'lessons':lessons, 'classrooms':classrooms, 'times':times, 'teacher':teacher})
+                  {'lessons':lessons, 'classrooms':classrooms, 'times':times, 'teacher':teacher, 'planId':planId})
 
 
 #@login_required
@@ -264,11 +264,11 @@ def connectLessons(request, planId, inter):
 
         if inter<len(teachers):
             return redirect(connectLessons, planId=1, inter=inter)
-    return render(request, 'scheduler/instruction.html',
-                  {'classrooms':classrooms, 'times':times})
+    return render(request, 'scheduler/connectlessons.html',
+                  {'classrooms':classrooms, 'times':times, 'planId':planId})
 
 #@login_required
-def connectClassrooms(request):
+def connectClassrooms(request, planId, inter):
     times = Time.objects.filter(planId_id=planId).using('schoolsDB')
     classrooms = Classroom.objects.filter(planId_id=planId).using('schoolsDB')
     classroom = classrooms[inter]
@@ -282,21 +282,21 @@ def connectClassrooms(request):
 
         if inter<len(classrooms):
             return redirect(connectClassrooms, planId=1, inter=inter)
-    return render(request, 'scheduler/instruction.html',
-                  {'times':times})
+    return render(request, 'scheduler/connectclassrooms.html',
+                  {'times':times, 'planId':planId})
 
 
 # Generate plan --------------------------
 
 #@login_required
-def generate(request):
+def generate(request, planId):
     if request.method == 'POST':
         form = LoginData(request.POST)
         if form.is_valid():
             pass
     else:
         form = NameForm()
-    return render(request, 'scheduler/instruction.html')
+    return render(request, 'scheduler/generate.html')
 
 
 # <<Undone>> end

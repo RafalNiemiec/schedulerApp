@@ -39,6 +39,6 @@ urlpatterns = [
     path('connectclassroom/<int:planId>/<int:inter>', views.connectClassrooms, name='connectclassroom'),
     #"""
 
-    #path('generate', views.generate, name='generate')
+    path('generate/<int:planId>', views.generate, name='generate')
 
 ]

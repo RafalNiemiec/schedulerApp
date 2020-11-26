@@ -756,7 +756,7 @@
       <div id="u711" class="ax_default ax_default_unplaced" data-left="58" data-top="766" data-width="300" data-height="70">
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u712" class="ax_default primary_button">
+        <div id="u712" class="ax_default primary_button" onclick="location.href='{% url 'addclasses' planId %}'">
           <div id="u712_div" class=""></div>
           <div id="u712_text" class="text ">
             <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Previous step</span></p>
@@ -782,7 +782,7 @@
         <div id="u716" class="ax_default" data-left="1483" data-top="978" data-width="300" data-height="71">
 
           <!-- Unnamed (Rectangle) -->
-          <div id="u717" class="ax_default primary_button">
+          <div id="u717" class="ax_default primary_button" onclick="location.href='{% url 'addlesson' planId %}'">
             <div id="u717_div" class=""></div>
             <div id="u717_text" class="text ">
               <p><span>Next step</span></p>
@@ -1634,7 +1634,7 @@
           <div id="u849" class="ax_default" data-left="1483" data-top="978" data-width="300" data-height="71">
 
             <!-- Unnamed (Rectangle) -->
-            <div id="u850" class="ax_default primary_button">
+            <div id="u850" class="ax_default primary_button" onclick="location.href='{% url 'addlesson' planId %}'">
               <div id="u850_div" class=""></div>
               <div id="u850_text" class="text ">
                 <p><span>Next step</span></p>
@@ -1658,11 +1658,12 @@
         <div id="u853" class="ax_default" data-left="137" data-top="978" data-width="300" data-height="70">
 
           <!-- Unnamed (Rectangle) -->
-          <div id="u854" class="ax_default primary_button">
+          <div id="u854" class="ax_default primary_button" onclick="location.href='{% url 'addclasses' planId %}'">
             <div id="u854_div" class=""></div>
             <div id="u854_text" class="text ">
               <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Previous step</span></p>
             </div>
+
           </div>
 
           <!-- Unnamed (Shape) -->
@@ -1800,11 +1801,14 @@
             <div id="u878" class="ax_default" data-label="AddTeacherButton" data-left="580" data-top="908" data-width="276" data-height="85">
 
               <!-- Unnamed (Rectangle) -->
+
               <div id="u879" class="ax_default addbutton_1200_black">
+                <input id="u879_div" type="submit" value="Add teacher">
+                <!--
                 <div id="u879_div" class=""></div>
                 <div id="u879_text" class="text ">
-                  <p><input type="submit">Add teacher</input></p>
-                </div>
+                  <p><span>Add teacher</span></p>
+                </div>-->
               </div>
 
               <!-- Unnamed (Shape) -->

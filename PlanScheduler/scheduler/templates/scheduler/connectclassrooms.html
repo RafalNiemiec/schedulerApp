@@ -2,48 +2,13 @@
 <html>
   <head>
     <title>connectClassrooms</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/connectclassrooms/styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
-    <script src="resources/scripts/axure/axQuery.js"></script>
-    <script src="resources/scripts/axure/globals.js"></script>
-    <script src="resources/scripts/axutils.js"></script>
-    <script src="resources/scripts/axure/annotation.js"></script>
-    <script src="resources/scripts/axure/axQuery.std.js"></script>
-    <script src="resources/scripts/axure/doc.js"></script>
-    <script src="resources/scripts/messagecenter.js"></script>
-    <script src="resources/scripts/axure/events.js"></script>
-    <script src="resources/scripts/axure/recording.js"></script>
-    <script src="resources/scripts/axure/action.js"></script>
-    <script src="resources/scripts/axure/expr.js"></script>
-    <script src="resources/scripts/axure/geometry.js"></script>
-    <script src="resources/scripts/axure/flyout.js"></script>
-    <script src="resources/scripts/axure/model.js"></script>
-    <script src="resources/scripts/axure/repeater.js"></script>
-    <script src="resources/scripts/axure/sto.js"></script>
-    <script src="resources/scripts/axure/utils.temp.js"></script>
-    <script src="resources/scripts/axure/variables.js"></script>
-    <script src="resources/scripts/axure/drag.js"></script>
-    <script src="resources/scripts/axure/move.js"></script>
-    <script src="resources/scripts/axure/visibility.js"></script>
-    <script src="resources/scripts/axure/style.js"></script>
-    <script src="resources/scripts/axure/adaptive.js"></script>
-    <script src="resources/scripts/axure/tree.js"></script>
-    <script src="resources/scripts/axure/init.temp.js"></script>
-    <script src="resources/scripts/axure/legacy.js"></script>
-    <script src="resources/scripts/axure/viewer.js"></script>
-    <script src="resources/scripts/axure/math.js"></script>
-    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
-    <script src="data/document.js"></script>
-    <script src="files/connectclassrooms/data.js"></script>
-    <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
-    </script>
+    {% include "scheduler/imports.html" %}
+    {% load static %}
+    <link href="{% static 'webScheduler/resources/reload.html' %}"/>
+    <link href="{% static 'webScheduler/files/connectclassrooms/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <script src="{% static 'webScheduler/files/connectclassrooms/data.js' %}"></script>
+
+    <link href="{% static 'webScheduler/universal.css' %}" type="text/css" rel="stylesheet"/>
   </head>
   <body>
     <div id="base" class="">
@@ -63,7 +28,7 @@
 
             <!-- LogoImg (Image) -->
             <div id="u2392" class="ax_default image" data-label="LogoImg">
-              <img id="u2392_img" class="img " src="images/mainpage/u20.png"/>
+              <img id="u2392_img" class="img " src="{% static 'webScheduler/images/mainpage/u20.png' %}"/>
               <div id="u2392_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -71,7 +36,7 @@
 
             <!-- MenuLine (Line) -->
             <div id="u2393" class="ax_default line" data-label="MenuLine">
-              <img id="u2393_img" class="img " src="images/mainpage/menuline_u27.svg"/>
+              <img id="u2393_img" class="img " src="{% static 'webScheduler/images/mainpage/menuline_u27.svg' %}"/>
               <div id="u2393_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -79,7 +44,7 @@
 
             <!-- LoginButton (Shape) -->
             <div id="u2394" class="ax_default icon" data-label="LoginButton">
-              <img id="u2394_img" class="img " src="images/mainpage/loginbutton_u28.svg"/>
+              <img id="u2394_img" class="img " src="{% static 'webScheduler/images/mainpage/loginbutton_u28.svg' %}"/>
               <div id="u2394_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -104,7 +69,7 @@
 
             <!-- Unnamed (Shape) -->
             <div id="u2398" class="ax_default icon">
-              <img id="u2398_img" class="img " src="images/instruction/u57.svg"/>
+              <img id="u2398_img" class="img " src="{% static 'webScheduler/images/instruction/u57.svg' %}"/>
               <div id="u2398_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -124,7 +89,7 @@
 
             <!-- ConfigureBackground (Rectangle) -->
             <div id="u2401" class="ax_default box_3" data-label="ConfigureBackground">
-              <img id="u2401_img" class="img " src="images/instruction/configurebackground_u60.svg"/>
+              <img id="u2401_img" class="img " src="{% static 'webScheduler/images/instruction/configurebackground_u60.svg' %}"/>
               <div id="u2401_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -140,7 +105,7 @@
 
             <!-- Unnamed (Line) -->
             <div id="u2403" class="ax_default line">
-              <img id="u2403_img" class="img " src="images/instruction/u62.svg"/>
+              <img id="u2403_img" class="img " src="{% static 'webScheduler/images/instruction/u62.svg' %}"/>
               <div id="u2403_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -255,7 +220,7 @@
 
           <!-- Unnamed (Vertical Line) -->
           <div id="u2420" class="ax_default line">
-            <img id="u2420_img" class="img " src="images/mainpage/u18.svg"/>
+            <img id="u2420_img" class="img " src="{% static 'webScheduler/images/mainpage/u18.svg' %}"/>
             <div id="u2420_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -263,7 +228,7 @@
 
           <!-- Unnamed (Vertical Line) -->
           <div id="u2421" class="ax_default line">
-            <img id="u2421_img" class="img " src="images/mainpage/u18.svg"/>
+            <img id="u2421_img" class="img " src="{% static 'webScheduler/images/mainpage/u18.svg' %}"/>
             <div id="u2421_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -272,7 +237,7 @@
 
         <!-- Unnamed (Image) -->
         <div id="u2422" class="ax_default image">
-          <img id="u2422_img" class="img " src="images/mainpage/u20.png"/>
+          <img id="u2422_img" class="img " src="{% static 'webScheduler/images/mainpage/u20.png' %}"/>
           <div id="u2422_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -280,7 +245,7 @@
 
         <!-- Unnamed (Line) -->
         <div id="u2423" class="ax_default line">
-          <img id="u2423_img" class="img " src="images/mainpage/u21.svg"/>
+          <img id="u2423_img" class="img " src="{% static 'webScheduler/images/mainpage/u21.svg' %}"/>
           <div id="u2423_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -288,7 +253,7 @@
 
         <!-- Unnamed (Line) -->
         <div id="u2424" class="ax_default line">
-          <img id="u2424_img" class="img " src="images/mainpage/u22.svg"/>
+          <img id="u2424_img" class="img " src="{% static 'webScheduler/images/mainpage/u22.svg' %}"/>
           <div id="u2424_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -308,7 +273,7 @@
 
                   <!-- Step 3 Arrow Button (Shape) -->
                   <div id="u2428" class="ax_default shape1" data-label="Step 3 Arrow Button">
-                    <img id="u2428_img" class="img " src="images/instruction/step_3_arrow_button_u87.svg"/>
+                    <img id="u2428_img" class="img " src="{% static 'webScheduler/images/instruction/step_3_arrow_button_u87.svg' %}"/>
                     <div id="u2428_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -348,7 +313,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2434" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2434_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2434_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %]"/>
                     <div id="u2434_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -388,7 +353,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2440" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2440_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2440_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2440_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -428,7 +393,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2446" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2446_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2446_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2446_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -468,7 +433,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2452" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2452_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2452_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2452_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -508,7 +473,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2458" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2458_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2458_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2458_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -548,7 +513,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2464" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2464_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2464_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2464_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -588,7 +553,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2470" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2470_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2470_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2470_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -628,7 +593,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2476" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2476_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2476_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2476_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -668,7 +633,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2482" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2482_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2482_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2482_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -708,7 +673,7 @@
 
                   <!-- Step 1 Arrow Button (Right Arrow Button) -->
                   <div id="u2488" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                    <img id="u2488_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                    <img id="u2488_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                     <div id="u2488_text" class="text " style="display:none; visibility: hidden">
                       <p></p>
                     </div>
@@ -775,7 +740,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2499" class="ax_default icon">
-          <img id="u2499_img" class="img " src="images/instruction/u158.svg"/>
+          <img id="u2499_img" class="img " src="{% static 'webScheduler/images/instruction/u158.svg' %}"/>
           <div id="u2499_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -798,7 +763,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2503" class="ax_default icon">
-          <img id="u2503_img" class="img " src="images/instruction/u162.svg"/>
+          <img id="u2503_img" class="img " src="{% static 'webScheduler/images/instruction/u162.svg' %}"/>
           <div id="u2503_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -825,7 +790,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2508" class="ax_default icon">
-          <img id="u2508_img" class="img " src="images/instruction/u158.svg"/>
+          <img id="u2508_img" class="img " src="{% static 'webScheduler/images/instruction/u158.svg' %}"/>
           <div id="u2508_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -848,7 +813,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2512" class="ax_default icon">
-          <img id="u2512_img" class="img " src="images/instruction/u162.svg"/>
+          <img id="u2512_img" class="img " src="{% static 'webScheduler/images/instruction/u162.svg' %}"/>
           <div id="u2512_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -890,7 +855,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2519" class="ax_default icon ax_default_unplaced" style="display:none; visibility: hidden">
-          <img id="u2519_img" class="img " src="resources/images/transparent.gif"/>
+          <img id="u2519_img" class="img " src="{% static 'webScheduler/resources/images/transparent.gif' %}"/>
           <div id="u2519_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -907,7 +872,7 @@
 
       <!-- Unnamed (Vertical Line) -->
       <div id="u2521" class="ax_default line ax_default_unplaced" style="display:none; visibility: hidden">
-        <img id="u2521_img" class="img " src="resources/images/transparent.gif"/>
+        <img id="u2521_img" class="img " src="{% static 'webScheduler/resources/images/transparent.gif' %}"/>
         <div id="u2521_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -924,7 +889,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2524" class="ax_default checkbox">
                 <label id="u2524_input_label" for="u2524_input" style="position: absolute; left: 0px;">
-                  <img id="u2524_img" class="img " src="images/connectclasses/u1561.svg"/>
+                  <img id="u2524_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1561.svg' %}"/>
                   <div id="u2524_text" class="text ">
                     <p><span>Item 1</span></p>
                   </div>
@@ -935,7 +900,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2525" class="ax_default checkbox">
                 <label id="u2525_input_label" for="u2525_input" style="position: absolute; left: 0px;">
-                  <img id="u2525_img" class="img " src="images/connectclasses/u1562.svg"/>
+                  <img id="u2525_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1562.svg' %}"/>
                   <div id="u2525_text" class="text ">
                     <p><span>Item 2</span></p>
                   </div>
@@ -946,7 +911,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2526" class="ax_default checkbox">
                 <label id="u2526_input_label" for="u2526_input" style="position: absolute; left: 0px;">
-                  <img id="u2526_img" class="img " src="images/connectclasses/u1563.svg"/>
+                  <img id="u2526_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1563.svg' %}"/>
                   <div id="u2526_text" class="text ">
                     <p><span>Item 3</span></p>
                   </div>
@@ -957,7 +922,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2527" class="ax_default checkbox">
                 <label id="u2527_input_label" for="u2527_input" style="position: absolute; left: 0px;">
-                  <img id="u2527_img" class="img " src="images/connectclasses/u1564.svg"/>
+                  <img id="u2527_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1564.svg' %}"/>
                   <div id="u2527_text" class="text ">
                     <p><span>Item 4</span></p>
                   </div>
@@ -968,7 +933,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2528" class="ax_default checkbox">
                 <label id="u2528_input_label" for="u2528_input" style="position: absolute; left: 0px;">
-                  <img id="u2528_img" class="img " src="images/connectclasses/u1565.svg"/>
+                  <img id="u2528_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1565.svg' %}"/>
                   <div id="u2528_text" class="text ">
                     <p><span>Item 5</span></p>
                   </div>
@@ -998,7 +963,7 @@
 
           <!-- Menu Carat (Triangle) -->
           <div id="u2532" class="ax_default flow_shape ax_default_unplaced" data-label="Menu Carat" style="display:none; visibility: hidden">
-            <img id="u2532_img" class="img " src="resources/images/transparent.gif"/>
+            <img id="u2532_img" class="img " src="{% static 'webScheduler/resources/images/transparent.gif' %}"/>
             <div id="u2532_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1025,7 +990,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2536" class="ax_default checkbox">
                 <label id="u2536_input_label" for="u2536_input" style="position: absolute; left: 0px;">
-                  <img id="u2536_img" class="img " src="images/connectclasses/u1561.svg"/>
+                  <img id="u2536_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1561.svg' %}"/>
                   <div id="u2536_text" class="text ">
                     <p><span>Item 1</span></p>
                   </div>
@@ -1036,7 +1001,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2537" class="ax_default checkbox">
                 <label id="u2537_input_label" for="u2537_input" style="position: absolute; left: 0px;">
-                  <img id="u2537_img" class="img " src="images/connectclasses/u1562.svg"/>
+                  <img id="u2537_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1562.svg' %}"/>
                   <div id="u2537_text" class="text ">
                     <p><span>Item 2</span></p>
                   </div>
@@ -1047,7 +1012,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2538" class="ax_default checkbox">
                 <label id="u2538_input_label" for="u2538_input" style="position: absolute; left: 0px;">
-                  <img id="u2538_img" class="img " src="images/connectclasses/u1563.svg"/>
+                  <img id="u2538_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1563.svg' %}"/>
                   <div id="u2538_text" class="text ">
                     <p><span>Item 3</span></p>
                   </div>
@@ -1058,7 +1023,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2539" class="ax_default checkbox">
                 <label id="u2539_input_label" for="u2539_input" style="position: absolute; left: 0px;">
-                  <img id="u2539_img" class="img " src="images/connectclasses/u1564.svg"/>
+                  <img id="u2539_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1564.svg' %}"/>
                   <div id="u2539_text" class="text ">
                     <p><span>Item 4</span></p>
                   </div>
@@ -1069,7 +1034,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2540" class="ax_default checkbox">
                 <label id="u2540_input_label" for="u2540_input" style="position: absolute; left: 0px;">
-                  <img id="u2540_img" class="img " src="images/connectclasses/u1565.svg"/>
+                  <img id="u2540_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1565.svg' %}"/>
                   <div id="u2540_text" class="text ">
                     <p><span>Item 5</span></p>
                   </div>
@@ -1099,7 +1064,7 @@
 
           <!-- Menu Carat (Triangle) -->
           <div id="u2544" class="ax_default flow_shape ax_default_unplaced" data-label="Menu Carat" style="display:none; visibility: hidden">
-            <img id="u2544_img" class="img " src="resources/images/transparent.gif"/>
+            <img id="u2544_img" class="img " src="{% static 'webScheduler/resources/images/transparent.gif' %}"/>
             <div id="u2544_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1126,7 +1091,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2548" class="ax_default checkbox">
                 <label id="u2548_input_label" for="u2548_input" style="position: absolute; left: 0px;">
-                  <img id="u2548_img" class="img " src="images/connectclasses/u1561.svg"/>
+                  <img id="u2548_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1561.svg' %}"/>
                   <div id="u2548_text" class="text ">
                     <p><span>Item 1</span></p>
                   </div>
@@ -1137,7 +1102,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2549" class="ax_default checkbox">
                 <label id="u2549_input_label" for="u2549_input" style="position: absolute; left: 0px;">
-                  <img id="u2549_img" class="img " src="images/connectclasses/u1562.svg"/>
+                  <img id="u2549_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1562.svg' %}"/>
                   <div id="u2549_text" class="text ">
                     <p><span>Item 2</span></p>
                   </div>
@@ -1148,7 +1113,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2550" class="ax_default checkbox">
                 <label id="u2550_input_label" for="u2550_input" style="position: absolute; left: 0px;">
-                  <img id="u2550_img" class="img " src="images/connectclasses/u1563.svg"/>
+                  <img id="u2550_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1563.svg' %}"/>
                   <div id="u2550_text" class="text ">
                     <p><span>Item 3</span></p>
                   </div>
@@ -1159,7 +1124,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2551" class="ax_default checkbox">
                 <label id="u2551_input_label" for="u2551_input" style="position: absolute; left: 0px;">
-                  <img id="u2551_img" class="img " src="images/connectclasses/u1564.svg"/>
+                  <img id="u2551_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1564.svg' %}"/>
                   <div id="u2551_text" class="text ">
                     <p><span>Item 4</span></p>
                   </div>
@@ -1170,7 +1135,7 @@
               <!-- Unnamed (Checkbox) -->
               <div id="u2552" class="ax_default checkbox">
                 <label id="u2552_input_label" for="u2552_input" style="position: absolute; left: 0px;">
-                  <img id="u2552_img" class="img " src="images/connectclasses/u1565.svg"/>
+                  <img id="u2552_img" class="img " src="{% static 'webScheduler/images/connectclasses/u1565.svg' %}"/>
                   <div id="u2552_text" class="text ">
                     <p><span>Item 5</span></p>
                   </div>
@@ -1200,7 +1165,7 @@
 
           <!-- Menu Carat (Triangle) -->
           <div id="u2556" class="ax_default flow_shape ax_default_unplaced" data-label="Menu Carat" style="display:none; visibility: hidden">
-            <img id="u2556_img" class="img " src="resources/images/transparent.gif"/>
+            <img id="u2556_img" class="img " src="{% static 'webScheduler/resources/images/transparent.gif' %}"/>
             <div id="u2556_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1258,7 +1223,7 @@
 
               <!-- LogoImg (Image) -->
               <div id="u2567" class="ax_default image" data-label="LogoImg">
-                <img id="u2567_img" class="img " src="images/mainpage/u20.png"/>
+                <img id="u2567_img" class="img " src="{% static 'webScheduler/images/mainpage/u20.png' %}"/>
                 <div id="u2567_text" class="text " style="display:none; visibility: hidden">
                   <p></p>
                 </div>
@@ -1266,7 +1231,7 @@
 
               <!-- MenuLine (Line) -->
               <div id="u2568" class="ax_default line" data-label="MenuLine">
-                <img id="u2568_img" class="img " src="images/mainpage/menuline_u27.svg"/>
+                <img id="u2568_img" class="img " src="{% static 'webScheduler/images/mainpage/menuline_u27.svg' %}"/>
                 <div id="u2568_text" class="text " style="display:none; visibility: hidden">
                   <p></p>
                 </div>
@@ -1274,7 +1239,7 @@
 
               <!-- LoginButton (Shape) -->
               <div id="u2569" class="ax_default icon" data-label="LoginButton">
-                <img id="u2569_img" class="img " src="images/mainpage/loginbutton_u28.svg"/>
+                <img id="u2569_img" class="img " src="{% static 'webScheduler/images/mainpage/loginbutton_u28.svg' %}"/>
                 <div id="u2569_text" class="text " style="display:none; visibility: hidden">
                   <p></p>
                 </div>
@@ -1299,7 +1264,7 @@
 
               <!-- Unnamed (Shape) -->
               <div id="u2573" class="ax_default icon">
-                <img id="u2573_img" class="img " src="images/instruction/u57.svg"/>
+                <img id="u2573_img" class="img " src="{% static 'webScheduler/images/instruction/u57.svg' %}"/>
                 <div id="u2573_text" class="text " style="display:none; visibility: hidden">
                   <p></p>
                 </div>
@@ -1319,7 +1284,7 @@
 
               <!-- ConfigureBackground (Rectangle) -->
               <div id="u2576" class="ax_default box_3" data-label="ConfigureBackground">
-                <img id="u2576_img" class="img " src="images/instruction/configurebackground_u60.svg"/>
+                <img id="u2576_img" class="img " src="{% static 'webScheduler/images/instruction/configurebackground_u60.svg' %}"/>
                 <div id="u2576_text" class="text " style="display:none; visibility: hidden">
                   <p></p>
                 </div>
@@ -1335,7 +1300,7 @@
 
               <!-- Unnamed (Line) -->
               <div id="u2578" class="ax_default line">
-                <img id="u2578_img" class="img " src="images/instruction/u62.svg"/>
+                <img id="u2578_img" class="img " src="{% static 'webScheduler/images/instruction/u62.svg' %}"/>
                 <div id="u2578_text" class="text " style="display:none; visibility: hidden">
                   <p></p>
                 </div>
@@ -1450,7 +1415,7 @@
 
             <!-- Unnamed (Vertical Line) -->
             <div id="u2595" class="ax_default line">
-              <img id="u2595_img" class="img " src="images/mainpage/u18.svg"/>
+              <img id="u2595_img" class="img " src="{% static 'webScheduler/images/mainpage/u18.svg' %}"/>
               <div id="u2595_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -1458,7 +1423,7 @@
 
             <!-- Unnamed (Vertical Line) -->
             <div id="u2596" class="ax_default line">
-              <img id="u2596_img" class="img " src="images/mainpage/u18.svg"/>
+              <img id="u2596_img" class="img " src="{% static 'webScheduler/images/mainpage/u18.svg' %}"/>
               <div id="u2596_text" class="text " style="display:none; visibility: hidden">
                 <p></p>
               </div>
@@ -1467,7 +1432,7 @@
 
           <!-- Unnamed (Image) -->
           <div id="u2597" class="ax_default image">
-            <img id="u2597_img" class="img " src="images/mainpage/u20.png"/>
+            <img id="u2597_img" class="img " src="{% static 'webScheduler/images/mainpage/u20.png' %}"/>
             <div id="u2597_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1475,7 +1440,7 @@
 
           <!-- Unnamed (Line) -->
           <div id="u2598" class="ax_default line">
-            <img id="u2598_img" class="img " src="images/mainpage/u21.svg"/>
+            <img id="u2598_img" class="img " src="{% static 'webScheduler/images/mainpage/u21.svg' %}"/>
             <div id="u2598_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1483,7 +1448,7 @@
 
           <!-- Unnamed (Line) -->
           <div id="u2599" class="ax_default line">
-            <img id="u2599_img" class="img " src="images/mainpage/u22.svg"/>
+            <img id="u2599_img" class="img " src="{% static 'webScheduler/images/mainpage/u22.svg' %}"/>
             <div id="u2599_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1503,7 +1468,7 @@
 
                     <!-- Step 3 Arrow Button (Shape) -->
                     <div id="u2603" class="ax_default shape1" data-label="Step 3 Arrow Button">
-                      <img id="u2603_img" class="img " src="images/instruction/step_3_arrow_button_u87.svg"/>
+                      <img id="u2603_img" class="img " src="{% static 'webScheduler/images/instruction/step_3_arrow_button_u87.svg' %}"/>
                       <div id="u2603_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1543,7 +1508,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2609" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2609_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2609_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2609_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1583,7 +1548,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2615" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2615_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2615_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2615_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1623,7 +1588,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2621" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2621_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2621_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2621_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1663,7 +1628,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2627" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2627_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2627_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2627_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1703,7 +1668,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2633" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2633_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2633_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2633_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1743,7 +1708,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2639" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2639_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2639_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2639_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1783,7 +1748,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2645" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2645_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2645_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2645_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1823,7 +1788,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2651" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2651_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2651_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2651_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1863,7 +1828,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2657" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2657_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2657_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2657_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1903,7 +1868,7 @@
 
                     <!-- Step 1 Arrow Button (Right Arrow Button) -->
                     <div id="u2663" class="ax_default shape1" data-label="Step 1 Arrow Button">
-                      <img id="u2663_img" class="img " src="images/instruction/step_1_arrow_button_u93.svg"/>
+                      <img id="u2663_img" class="img " src="{% static 'webScheduler/images/instruction/step_1_arrow_button_u93.svg' %}"/>
                       <div id="u2663_text" class="text " style="display:none; visibility: hidden">
                         <p></p>
                       </div>
@@ -1970,7 +1935,7 @@
 
           <!-- Unnamed (Shape) -->
           <div id="u2674" class="ax_default icon">
-            <img id="u2674_img" class="img " src="images/instruction/u158.svg"/>
+            <img id="u2674_img" class="img " src="{% static 'webScheduler/images/instruction/u158.svg' %}"/>
             <div id="u2674_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -1993,7 +1958,7 @@
 
           <!-- Unnamed (Shape) -->
           <div id="u2678" class="ax_default icon">
-            <img id="u2678_img" class="img " src="images/instruction/u162.svg"/>
+            <img id="u2678_img" class="img " src="{% static 'webScheduler/images/instruction/u162.svg' %}"/>
             <div id="u2678_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -2020,7 +1985,7 @@
 
           <!-- Unnamed (Shape) -->
           <div id="u2683" class="ax_default icon">
-            <img id="u2683_img" class="img " src="images/instruction/u158.svg"/>
+            <img id="u2683_img" class="img " src="{% static 'webScheduler/images/instruction/u158.svg' %}"/>
             <div id="u2683_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -2043,7 +2008,7 @@
 
           <!-- Unnamed (Shape) -->
           <div id="u2687" class="ax_default icon">
-            <img id="u2687_img" class="img " src="images/instruction/u162.svg"/>
+            <img id="u2687_img" class="img " src="{% static 'webScheduler/images/instruction/u162.svg' %}"/>
             <div id="u2687_text" class="text " style="display:none; visibility: hidden">
               <p></p>
             </div>
@@ -2113,11 +2078,11 @@
 
           <!-- ConnectLessonsButton (Rectangle) -->
           <div id="u2697" class="ax_default addbutton_1200_black" data-label="ConnectLessonsButton">
-            <div id="u2697_div" class=""></div>
-            <div id="u2697_text" class="text ">
+            <input id="u2697_div" class="" type="submit" value="Connect"></input>
+            <!--<div id="u2697_text" class="text ">
               <p><span>Connect</span></p>
             </div>
-          </div>
+          </div>-->
         </div>
 
         <!-- ArrowsGroup (Group) -->
@@ -2134,7 +2099,7 @@
         <div id="u2701" class="ax_default" data-left="1480" data-top="980" data-width="300" data-height="71">
 
           <!-- Unnamed (Rectangle) -->
-          <div id="u2702" class="ax_default primary_button">
+          <div id="u2702" class="ax_default primary_button" onclick="location.href='{% url 'generate' planId %}'">
             <div id="u2702_div" class=""></div>
             <div id="u2702_text" class="text ">
               <p><span>Next step</span></p>
@@ -2144,7 +2109,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2703" class="ax_default icon">
-          <img id="u2703_img" class="img " src="images/instruction/u158.svg"/>
+          <img id="u2703_img" class="img " src="{% static 'webScheduler/images/instruction/u158.svg' %}"/>
           <div id="u2703_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -2158,7 +2123,7 @@
       <div id="u2705" class="ax_default" data-left="138" data-top="980" data-width="300" data-height="70">
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u2706" class="ax_default primary_button">
+        <div id="u2706" class="ax_default primary_button" onclick="location.href='{% url 'connectlesson' planId 0 %}'">
           <div id="u2706_div" class=""></div>
           <div id="u2706_text" class="text ">
             <p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Previous step</span></p>
@@ -2167,7 +2132,7 @@
 
         <!-- Unnamed (Shape) -->
         <div id="u2707" class="ax_default icon">
-          <img id="u2707_img" class="img " src="images/instruction/u162.svg"/>
+          <img id="u2707_img" class="img " src="{% static 'webScheduler/images/instruction/u162.svg' %}"/>
           <div id="u2707_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -2175,6 +2140,6 @@
       </div>
       <div id="u2704" style="display:none; visibility:hidden;"></div>
     </div>
-    <script src="resources/scripts/axure/ios.js"></script>
+    <!--<script src="{% static 'webScheduler/resources/scripts/axure/ios.js' %}"></script>-->
   </body>
 </html>

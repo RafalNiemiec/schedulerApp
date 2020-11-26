@@ -21,3 +21,12 @@
     background-color: green;
     position: absolute;
 }
+
+#connectClassesForm {
+    background-color: green;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 200px;
+    height: 300px;
+}
