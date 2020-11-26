@@ -21,22 +21,22 @@ urlpatterns = [
     
     #Filling data
 
-    path('instruction', views.namePlan, name='instruction')
-    #path('addtime', views.addTime, name='addtime')
-    #path('addclasses', views.addClasses, name='addclasses')
-    #path('addteacher', views.addTeacher, name='addteacher')
-    #path('addlesson', views.addLesson, name='addlesson')
-    #path('addclassroom', views.addClassroom, name='addclassroom')
+    path('instruction', views.namePlan, name='instruction'),
+    path('addtime/<int:planId>', views.addTime, name='addtime'),
+    path('addclasses/<int:planId>', views.addClasses, name='addclasses'),
+    path('addteacher/<int:planId>', views.addTeacher, name='addteacher'),
+    path('addlesson/<int:planId>', views.addLesson, name='addlesson'),
+    path('addclassroom/<int:planId>', views.addClassroom, name='addclassroom'),
     #"""
     
     #Connect data
     #"""
     #path('instruction', views.connectPlan, name='instruction')
     #path('connecttime', views.connectTime, name='connecttime')
-    #path('connectclasses', views.connectClasses, name='connectclasses')
-    #path('connectteacher', views.connectTeacher, name='connectteacher')
-    #path('connectlesson', views.connectLesson, name='connectlesson')
-    #path('connectclassroom', views.connectClassroom, name='connectclassroom')
+    path('connectclasses/<int:planId>/<int:inter>', views.connectClasses, name='connectclasses'),
+    path('connectteacher/<int:planId>/<int:inter>', views.connectTeachers, name='connectteacher'),
+    path('connectlesson/<int:planId>/<int:inter>', views.connectLessons, name='connectlesson'),
+    path('connectclassroom/<int:planId>/<int:inter>', views.connectClassrooms, name='connectclassroom'),
     #"""
 
     #path('generate', views.generate, name='generate')

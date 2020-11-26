@@ -1,4 +1,5 @@
 from django import forms
+from .models import Teacher
 
 class NameForm(forms.Form):
     pas = forms.CharField(max_length=100)
@@ -34,13 +35,20 @@ class AddTimeForm(forms.Form):
 class AddClassesForm(forms.Form):
     groupName = forms.CharField(initial='Group Name', max_length=60, help_text='max 60 characters',
                                 error_messages={'required': 'Please insert data'})
+    minDayHours = forms.IntegerField()
+    maxDayHours = forms.IntegerField()
+
+
 class AddTeacherForm(forms.Form):
     name = forms.CharField(initial='Name', max_length=30, help_text='max 60 characters',
                            error_messages={'required': 'Please insert data'})
     surname = forms.CharField(initial='Surname', max_length=30, help_text='max 100 characters',
                               error_messages={'required': 'Please insert data'})
-    #maxWeeklyHours = forms.Form()
-    #minWeeklyHours = forms.Form()
+    minDayHours = forms.IntegerField()
+    maxDayHours = forms.IntegerField()
+    maxWeekHours = forms.IntegerField()
+    minWeekHours = forms.IntegerField()
+
 
 class AddLessonForm(forms.Form):
     lessonName = forms.CharField(initial='Lesson name', max_length=60, help_text='max 60 characters',
@@ -49,7 +57,10 @@ class AddLessonForm(forms.Form):
 class AddClassroomForm(forms.Form):
     classroomName = forms.CharField(initial='Classroom name', max_length=15, help_text='max 60 characters',
                                  error_messages={'required': 'Please insert data'})
+    building = forms.CharField(max_length=60)
 
 #class
 #Countries = forms.MultipleChoiceField(widget=forms.SelectMultiple,
                                             #choices=OPTIONS_TUPPLE)
+
+

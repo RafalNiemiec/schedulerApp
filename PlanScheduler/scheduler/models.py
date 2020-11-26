@@ -2,14 +2,21 @@ from django.db import models
 
 # Create your models here.
 
-"""
+class PlansPermission(models.Model):
+    userData = models.CharField(max_length=60, default=' ')
+    planName = models.CharField(max_length=60)
+    class Meta:
+        db_table = 'plansPermission'
 
 class Time(models.Model):
+    planId = models.ForeignKey(PlansPermission, on_delete=models.CASCADE)
     timeWindow = models.IntegerField()
+    day = models.CharField(max_length=60, default='')
     class Meta:
         db_table = 'time'
 
 class Classroom(models.Model):
+    planId = models.ForeignKey(PlansPermission, on_delete=models.CASCADE)
     classroomName = models.CharField(max_length=30)
     building = models.CharField(max_length=30)
     #Relations
@@ -18,6 +25,7 @@ class Classroom(models.Model):
         db_table = 'classroom'
 
 class Lesson(models.Model):
+    planId = models.ForeignKey(PlansPermission, on_delete=models.CASCADE)
     lessonName = models.CharField(max_length=30)
     # Relations
     classrooms = models.ManyToManyField(Classroom)
@@ -26,8 +34,14 @@ class Lesson(models.Model):
         db_table = 'lesson'
 
 class Teacher(models.Model):
+    planId = models.ForeignKey(PlansPermission, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
+    minDailyHours = models.IntegerField(default=2)
+    maxDailyHours = models.IntegerField(default=8)
+    minWeeklyHours = models.IntegerField(default=10)
+    maxWeeklyHours = models.IntegerField(default=40)
+
     #Relations
     lesson = models.ManyToManyField(Lesson)
     classroom = models.ManyToManyField(Classroom)
@@ -35,25 +49,37 @@ class Teacher(models.Model):
     class Meta:
         db_table = 'teacher'
 
+    #def __str__(self):
+         #return "{0} {1}".format(self.First_Name, self.Last_Name)
+
+class GroupLesson(models.Model):
+    group = models.ForeignKey("Group", on_delete=models.CASCADE, default='')
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, default='')
+    lessonAmount = models.IntegerField(default=1)
+    class Meta:
+        db_table = "group_lesson"
+
 #School tables
 class Group(models.Model):
+    planId = models.ForeignKey(PlansPermission, on_delete=models.CASCADE)
     groupName = models.CharField(max_length=30)
+    minDailyHoursClass = models.IntegerField(default=1)
+    maxDailyHoursClass = models.IntegerField(default=1)
+
     #Relations
     teacher = models.ManyToManyField(Teacher)
-    lesson = models.ManyToManyField(Lesson)
+    lesson = models.ManyToManyField(Lesson, blank=True, through=GroupLesson, through_fields=["group", "lesson"])
     classroom = models.ManyToManyField(Classroom)
     time = models.ManyToManyField(Time)
     class Meta:
         db_table = 'group'
 
-"""
 
 
-class PlansPermission(models.Model):
-    userNumber = models.CharField(max_length=60)
-    planName = models.CharField(max_length=60)
-    class Meta:
-        db_table = 'plansPermission'
+
+#Group.lesson.through._meta.get_field('').column = ''
+
+
 
 
 """

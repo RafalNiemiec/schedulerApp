@@ -80,14 +80,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'databases' / 'db.sqlite3',
     },
-    'school': {
+    'schoolsDB': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'databases' / 'school.sqlite3',
-    },
-    'planPermission': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'databases' / 'planPermission.sqlite3',
-    },
+        'NAME': BASE_DIR / 'databases' / 'schoolsDB.sqlite3',
+    }
 }
 #DATABASE_ROUTERS = ['scheduler.database_routers.DatabaseAppsRouter']
 
@@ -136,7 +132,7 @@ STATICFILES_DIR = [
 ]
 #STATIC_ROOT = os.path.join(BASE_DIR, "templates")
 
-#STATICFILES_FINDERS = (
-#    'django.contrib.staticfiles.finders.FileSystemFinder',
-#    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)

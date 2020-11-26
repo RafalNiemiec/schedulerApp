@@ -1,0 +1,23 @@
+﻿#hourBox {
+    position: absolute;
+    background-color: green;
+    top: 400px;
+    left: 800px;
+    width: 100px;
+    height: auto;
+}
+
+.selectpicker {
+    padding-top: 20px;
+}
+
+#pad {
+    padding-top:40px;
+}
+
+.mad {
+    height: 40px;
+    width: 200px;
+    background-color: green;
+    position: absolute;
+}

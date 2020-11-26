@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
-        {% load static %}
-        <meta charset="UTF-8">
-        <link href="{% static 'webScheduler/resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
-        <link href="{% static 'webScheduler/data/styles.css' %}" type="text/css" rel="stylesheet"/>
-        <!-- <link href="{% static 'webScheduler/files/addclass/styles.css' %}" type="text/css" rel="stylesheet"/> -->
+    {% load static %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <!--Links-->
+    <link href="{% static 'webScheduler/resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'webScheduler/data/styles.css' %}" type="text/css" rel="stylesheet"/>
+    <!--<link href="{% static 'webScheduler/files/generate/styles.css' %}" type="text/css" rel="stylesheet"/>-->
+    <!--Scripts-->
+    <script src="{% static 'webScheduler/resources/scripts/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/axQuery.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/globals.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axutils.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/annotation.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/axQuery.std.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/doc.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/messagecenter.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/events.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/recording.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/action.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/expr.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/geometry.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/flyout.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/model.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/repeater.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/sto.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/utils.temp.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/variables.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/drag.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/move.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/visibility.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/style.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/adaptive.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/tree.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/init.temp.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/legacy.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/viewer.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/math.js' %}"></script>
+    <script src="{% static 'webScheduler/resources/scripts/axure/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'webScheduler/data/document.js' %}"></script>
+    <!--<script src="{% static 'webScheduler/files/generate/data.js' %}"></script>-->
 
-        <!-- All axure resources-->
-        <script src="{% static 'webScheduler/resources/scripts/jquery-3.2.1.min.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/axQuery.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/globals.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axutils.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/annotation.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/axQuery.std.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/doc.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/messagecenter.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/events.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/recording.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/action.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/expr.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/geometry.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/flyout.js' $}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/model.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/repeater.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/sto.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/utils.temp.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/variables.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/drag.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/move.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/visibility.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/style.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/adaptive.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/tree.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/init.temp.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/legacy.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/viewer.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/math.js' %}"></script>
-        <script src="{% static 'webScheduler/resources/scripts/axure/jquery.nicescroll.min.js' %}"></script>
-        <script src="{% static 'webScheduler/data/document.js' %}"></script>
-        <!-- <script src="{% static 'webScheduler/files/addclass/data.js' %}"></script> -->
-        <script type="{% static 'text/javascript' %}">
-                $axure.utils.getTransparentGifPath = function() { return "{% static 'resources/images/transparent.gif' %}"; };
-                $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-                $axure.utils.getReloadPath = function() { return "{% static 'resources/reload.html' %}"; };
-        </script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return "resources/images/transparent.gif"; };
+      $axure.utils.getOtherPath = function() { return "resources/Other.html"; };
+      $axure.utils.getReloadPath = function() { return "resources/reload.html"; };
+    </script>
+
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+    <!--<script src="{% static 'webScheduler/resources/scripts/axure/ios.js' %}"></script>-->
+
   </head>
 </html>
